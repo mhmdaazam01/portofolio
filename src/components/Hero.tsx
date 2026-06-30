@@ -1,9 +1,7 @@
-import heroImg from '../assets/hero.png';
-
 export default function Hero() {
   return (
     <section className="hero">
-      <div className="hero-inner">
+      <div className="hero-inner hero-inner--no-photo">
         <div>
           <span className="eyebrow">Social Media Specialist & Content Creator</span>
           <h1>Konten yang terencana.<br/>Hasil yang terukur.</h1>
@@ -21,9 +19,6 @@ export default function Hero() {
             <b>Pendidikan</b> S1 Manajemen, STIE Ekuitas &nbsp;&middot;&nbsp;
             <b>Status</b> Tersedia untuk peluang penuh waktu
           </p>
-        </div>
-        <div className="hero-photo">
-          <img src={heroImg} alt="Azzam Ismail" />
         </div>
       </div>
     </section>
