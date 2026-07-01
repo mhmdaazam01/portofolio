@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="hero-inner">
         <div>
           <span className="eyebrow">Social Media Specialist & Content Creator</span>
-          <h1>Hallo
+          <h1>Hallo, Saya Azzam</h1>
           <p className="hero-desc">
             Saya Muhammad Azzam Ismail — lulusan S1 Manajemen STIE Ekuitas dengan pengalaman langsung mengelola media sosial.
             Menangani proses dari <b>perencanaan dan produksi konten</b> hingga <b>evaluasi performa</b>,
