@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { Link } from 'react-router-dom';
 
 interface Metric {
   num: string;
@@ -6,7 +7,7 @@ interface Metric {
   isDelta?: boolean;
 }
 
-interface Link {
+interface ExternalLink {
   url: string;
   label: string;
 }
@@ -20,7 +21,8 @@ interface Experience {
   scopes: string[];
   metrics: Metric[];
   note?: ReactNode;
-  links?: Link[];
+  links?: ExternalLink[];
+  caseStudyUrl?: string; // New field for case study link
 }
 
 const experiences: Experience[] = [
@@ -47,7 +49,8 @@ const experiences: Experience[] = [
         Mengelola lintas platform secara bersamaan — dari <b>perencanaan konten</b> sampai eksekusi iklan berbayar untuk traffic website.
       </>
     ),
-    links: []
+    links: [],
+    caseStudyUrl: "/case-studies/stg" // Add case study link
   },
   {
     id: "02",
@@ -71,7 +74,8 @@ const experiences: Experience[] = [
     links: [
       { url: "https://www.instagram.com/yourbuddy_in/", label: "instagram.com/yourbuddy_in ↗" },
       { url: "https://www.tiktok.com/@yourbuddy_in", label: "tiktok.com/@yourbuddy_in ↗" }
-    ]
+    ],
+    caseStudyUrl: "/case-studies/yourbuddy" // Add case study link
   },
   {
     id: "03",
@@ -94,7 +98,8 @@ const experiences: Experience[] = [
     ],
     links: [
       { url: "https://www.tiktok.com/@dhamarcustom", label: "tiktok.com/@dhamarcustom ↗" }
-    ]
+    ],
+    caseStudyUrl: "/case-studies/dmr-custom" // Add case study link
   },
   {
     id: "04",
@@ -116,7 +121,8 @@ const experiences: Experience[] = [
     ],
     links: [
       { url: "https://www.youtube.com/@hmmekuitasbdg", label: "youtube.com/@hmmekuitasbdg ↗" }
-    ]
+    ],
+    caseStudyUrl: "/case-studies/hmm-ekuitas" // Add case study link
   }
 ];
 
@@ -154,6 +160,15 @@ export default function WorkExperience() {
                     </div>
                     
                     {exp.note && <p className="entry-note">{exp.note}</p>}
+
+                    {/* Case Study Link */}
+                    {exp.caseStudyUrl && (
+                      <div className="entry-links" style={{marginBottom: exp.links && exp.links.length > 0 ? '12px' : '0'}}>
+                        <Link to={exp.caseStudyUrl} className="entry-case-study-link">
+                          Lihat Case Study Lengkap →
+                        </Link>
+                      </div>
+                    )}
 
                     {exp.links && exp.links.length > 0 && (
                       <div className="entry-links">
